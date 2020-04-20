@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: {
     'vendor-styles': [
-      './src/vendors/highlight.js@9.12.0/theme.min.css'
+      './src/vendors/highlight.js@9.12.0/rainbow.css',
     ],
     app: './src/index.js'
   },

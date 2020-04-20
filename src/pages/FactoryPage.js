@@ -1,5 +1,5 @@
 import React from 'react'
-import highlight from '../helper/highlight'
+import PageWrapper from '../components/pageWrapper'
 
 const jsCode = `
 init = jQuery.fn.init = function( selector, context, root ) {
@@ -33,14 +33,7 @@ init = jQuery.fn.init = function( selector, context, root ) {
   // 处理其它情况
   return jQuery.makeArray( selector, this )
 }`
-const resCode = highlight(jsCode, 'javascript')
 
 export const FactoryPage = () => (
-  <div className="wrapper">
-    <div className="page">
-      <h1 className="mb20 font24">factory pattern</h1>
-      <h2 className="mb15">jquery 实现</h2>
-      <pre className="hljs" dangerouslySetInnerHTML={{ __html: resCode }}></pre>
-    </div>
-  </div>
+  <PageWrapper codeText={ jsCode } title="factory pattern"></PageWrapper>
 )
