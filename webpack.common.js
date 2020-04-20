@@ -1,9 +1,13 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
+    'vendor-styles': [
+      './src/vendors/highlight.js@9.12.0/theme.min.css'
+    ],
     app: './src/index.js'
   },
   module: {
@@ -15,6 +19,15 @@ module.exports = {
           'style-loader',
           'css-loader',
           'stylus-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          'css-loader'
         ]
       },
       {
@@ -30,6 +43,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Production',
       template: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      ignoreOrder: false,
     })
   ],
   resolve: {
