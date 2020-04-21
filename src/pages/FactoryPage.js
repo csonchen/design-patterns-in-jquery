@@ -1,5 +1,5 @@
 import React from 'react'
-import PageWrapper from '../components/pageWrapper'
+import PageWrapper from '../components/PageWrapper'
 
 const jsCode = `
 init = jQuery.fn.init = function( selector, context, root ) {

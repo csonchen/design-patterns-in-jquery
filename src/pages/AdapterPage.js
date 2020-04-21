@@ -1,5 +1,5 @@
 import React from 'react'
-import PageWrapper from '../components/pageWrapper'
+import PageWrapper from '../components/PageWrapper'
 
 const jsCode = `
 // 这里的 ActiveXObject 是重点，如果存在 ActiveXObject, 说明是IE
